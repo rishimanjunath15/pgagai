@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "feed": "Feed",
+    "settings": "Settings",
+    "profile": "Profile",
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "header": {
+    "search": "Search news, movies, posts, categories...",
+    "toggleDark": "Toggle dark mode",
+    "demoMode": "Demo Mode",
+    "demoDesc": "showing sample/mock data. Add real API keys to see live content.",
+    "addKeys": "Add Keys →",
+    "liveData": "Live Data",
+    "manageKeys": "Manage Keys"
+  },
+  "feed": {
+    "title": "Your Feed",
+    "loading": "Loading your feed...",
+    "empty": "No content found. Try adjusting your preferences.",
+    "refresh": "Refresh",
+    "loadMore": "Load more",
+    "newItemsBanner": "{{count}} new items — click to load",
+    "categories": {
+      "all": "All",
+      "news": "News",
+      "movies": "Movies",
+      "social": "Social"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "apiKeys": "API Keys",
+    "preferences": "Preferences",
+    "darkMode": "Dark Mode",
+    "language": "Language"
+  },
+  "profile": {
+    "title": "My Profile",
+    "name": "Display Name",
+    "email": "Email",
+    "bio": "Bio",
+    "plan": "Plan",
+    "save": "Save Changes",
+    "saved": "Changes saved!",
+    "avatar": "Avatar"
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "email": "Email address",
+    "password": "Password",
+    "forgotPassword": "Forgot password?",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "invalidCredentials": "Invalid email or password.",
+    "signingIn": "Signing in...",
+    "checking": "Checking authentication...",
+    "demoHint": "Demo: demo@dashboard.com / demo123"
+  },
+  "realtime": {
+    "connected": "Live updates active",
+    "disconnected": "Reconnecting...",
+    "newItems": "{{count}} new item",
+    "newItems_plural": "{{count}} new items"
+  }
+}

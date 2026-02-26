@@ -1,0 +1,66 @@
+{
+  "nav": {
+    "feed": "Feed",
+    "settings": "Einstellungen",
+    "profile": "Profil",
+    "login": "Anmelden",
+    "logout": "Abmelden"
+  },
+  "header": {
+    "search": "Nachrichten, Filme, Beiträge suchen...",
+    "toggleDark": "Dunkelmodus umschalten",
+    "demoMode": "Demo-Modus",
+    "demoDesc": "Beispieldaten werden angezeigt. Füge API-Schlüssel hinzu für Live-Inhalte.",
+    "addKeys": "Schlüssel hinzufügen →",
+    "liveData": "Live-Daten",
+    "manageKeys": "Schlüssel verwalten"
+  },
+  "feed": {
+    "title": "Dein Feed",
+    "loading": "Feed wird geladen...",
+    "empty": "Kein Inhalt gefunden. Passe deine Einstellungen an.",
+    "refresh": "Aktualisieren",
+    "loadMore": "Mehr laden",
+    "newItemsBanner": "{{count}} neue Einträge — zum Laden klicken",
+    "categories": {
+      "all": "Alle",
+      "news": "Nachrichten",
+      "movies": "Filme",
+      "social": "Sozial"
+    }
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "apiKeys": "API-Schlüssel",
+    "preferences": "Präferenzen",
+    "darkMode": "Dunkelmodus",
+    "language": "Sprache"
+  },
+  "profile": {
+    "title": "Mein Profil",
+    "name": "Anzeigename",
+    "email": "E-Mail-Adresse",
+    "bio": "Biografie",
+    "plan": "Tarif",
+    "save": "Änderungen speichern",
+    "saved": "Änderungen gespeichert!",
+    "avatar": "Avatar"
+  },
+  "auth": {
+    "signIn": "Anmelden",
+    "signUp": "Registrieren",
+    "email": "E-Mail-Adresse",
+    "password": "Passwort",
+    "forgotPassword": "Passwort vergessen?",
+    "noAccount": "Noch kein Konto?",
+    "hasAccount": "Bereits ein Konto?",
+    "invalidCredentials": "Ungültige E-Mail oder Passwort.",
+    "signingIn": "Anmeldung läuft...",    "checking": "Authentifizierung überprüfen...",    "demoHint": "Demo: demo@dashboard.com / demo123"
+  },
+  "realtime": {
+    "connected": "Live-Updates aktiv",
+    "disconnected": "Verbindung wird wiederhergestellt...",
+    "newItems": "{{count}} neuer Eintrag",
+    "newItems_plural": "{{count}} neue Einträge"
+  }
+}

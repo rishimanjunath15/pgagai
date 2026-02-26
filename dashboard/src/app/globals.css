@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/*
+ * CRITICAL for dark mode in Tailwind v4:
+ * This tells Tailwind to activate all `dark:` utility variants
+ * whenever a `.dark` class exists on the element or any ancestor.
+ * Without this, dark: variants only respond to prefers-color-scheme media query.
+ */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---- Light mode CSS variables ---- */
+:root {
+  --background: #f9fafb;
+  --foreground: #111827;
+}
+
+/* ---- Dark mode CSS variables ---- */
+.dark {
+  --background: #030712;
+  --foreground: #f9fafb;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ---- Utility: Clamp text to N lines ---- */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ---- Smooth scrolling ---- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---- Smooth dark mode color transition ---- */
+/* All elements fade their colors when .dark is toggled on <html> */
+*,
+*::before,
+*::after {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 250ms;
+  transition-timing-function: ease;
+}
+/* But don't transition transforms/opacity — that would slow down Framer Motion animations */
+
+/* ---- Sidebar transition ---- */
+aside {
+  transition: transform 0.3s ease;
+}

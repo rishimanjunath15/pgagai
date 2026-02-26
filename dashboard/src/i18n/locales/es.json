@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "feed": "Inicio",
+    "settings": "Configuración",
+    "profile": "Perfil",
+    "login": "Iniciar sesión",
+    "logout": "Cerrar sesión"
+  },
+  "header": {
+    "search": "Buscar noticias, películas, publicaciones...",
+    "toggleDark": "Cambiar modo oscuro",
+    "demoMode": "Modo Demo",
+    "demoDesc": "mostrando datos de muestra. Añade claves API para ver contenido real.",
+    "addKeys": "Añadir claves →",
+    "liveData": "Datos en vivo",
+    "manageKeys": "Gestionar claves"
+  },
+  "feed": {
+    "title": "Tu feed",
+    "loading": "Cargando tu feed...",
+    "empty": "No se encontró contenido. Ajusta tus preferencias.",
+    "refresh": "Actualizar",
+    "loadMore": "Cargar más",
+    "newItemsBanner": "{{count}} nuevos elementos — haz clic para cargar",
+    "categories": {
+      "all": "Todo",
+      "news": "Noticias",
+      "movies": "Películas",
+      "social": "Social"
+    }
+  },
+  "settings": {
+    "title": "Configuración",
+    "apiKeys": "Claves API",
+    "preferences": "Preferencias",
+    "darkMode": "Modo oscuro",
+    "language": "Idioma"
+  },
+  "profile": {
+    "title": "Mi perfil",
+    "name": "Nombre visible",
+    "email": "Correo electrónico",
+    "bio": "Biografía",
+    "plan": "Plan",
+    "save": "Guardar cambios",
+    "saved": "¡Cambios guardados!",
+    "avatar": "Avatar"
+  },
+  "auth": {
+    "signIn": "Iniciar sesión",
+    "signUp": "Registrarse",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "noAccount": "¿No tienes una cuenta?",
+    "hasAccount": "¿Ya tienes una cuenta?",
+    "invalidCredentials": "Correo o contraseña incorrectos.",
+    "signingIn": "Iniciando sesión...",
+    "checking": "Verificando autenticación...",
+    "demoHint": "Demo: demo@dashboard.com / demo123"
+  },
+  "realtime": {
+    "connected": "Actualizaciones en vivo activas",
+    "disconnected": "Reconectando...",
+    "newItems": "{{count}} nuevo elemento",
+    "newItems_plural": "{{count}} nuevos elementos"
+  }
+}
