@@ -23,10 +23,10 @@ import {
 } from "@dnd-kit/sortable";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { ContentItem } from "@/types";
-import { useAppDispatch } from "@/hooks/useRedux";
+import { ContentItem } from "@/shared/types";
+import { useAppDispatch } from "@/shared/hooks/useRedux";
 import { reorderFeed } from "@/store/contentSlice";
-import ContentCard from "@/components/cards/ContentCard";
+import ContentCard from "@/features/feed/components/ContentCard";
 
 // ---- SortableCard Wrapper ----
 // IMPORTANT: We split the drag listeners from the card content.

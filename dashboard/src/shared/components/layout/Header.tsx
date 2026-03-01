@@ -7,12 +7,12 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
 import { useTranslation } from "react-i18next";
-import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
+import { useAppDispatch, useAppSelector } from "@/shared/hooks/useRedux";
 import { toggleDarkMode } from "@/store/preferencesSlice";
 import { setQuery, performSearch, clearSearch } from "@/store/searchSlice";
-import { LS_NEWS_KEY, LS_TMDB_KEY } from "@/hooks/useApiKeys";
-import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
-import { getAvatarGradient } from "@/lib/avatarOptions";
+import { LS_NEWS_KEY, LS_TMDB_KEY } from "@/features/settings/hooks/useApiKeys";
+import LanguageSwitcher from "@/shared/components/ui/LanguageSwitcher";
+import { getAvatarGradient } from "@/shared/utils/avatarOptions";
 
 interface HeaderProps {
   onMenuClick: () => void;
@@ -101,66 +101,25 @@ export default function Header({ onMenuClick }: HeaderProps) {
   const showSpinner = isTyping || searchLoading;
 
   return (
-    <header className="sticky top-0 z-10 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
+    <header className="sticky top-0 z-10 bg-white dark:bg-gray-800 shadow-md border-b border-gray-200 dark:border-gray-700">
       {/* ---- API Status Banner ---- */}
-      {isDemoMode ? (
+      {isDemoMode && (
         /* Demo Mode: amber banner prompting user to add keys */
-        <div className="bg-amber-50 dark:bg-amber-900/30 border-b border-amber-200 dark:border-amber-800
-                        px-4 py-1.5 flex items-center justify-between gap-4">
-          <p className="text-xs text-amber-700 dark:text-amber-400">
-            🎭 <strong>Demo Mode</strong> — showing sample/mock data. Add real API keys to see live content.
+        <div className="bg-amber-50 dark:bg-amber-900/20 border-b border-amber-200 dark:border-amber-800
+                        px-4 py-2 flex items-center justify-between gap-4">
+          <p className="text-xs font-medium text-amber-700 dark:text-amber-400 flex items-center gap-2">
+            <span className="text-base">🎭</span>
+            <span><strong>Demo Mode</strong> — showing sample/mock data. Add real API keys to see live content.</span>
           </p>
           <Link
             href="/settings"
-            className="text-xs font-medium text-amber-700 dark:text-amber-400
-                       underline underline-offset-2 hover:text-amber-900 dark:hover:text-amber-200
+            className="text-xs font-bold text-amber-700 dark:text-amber-400 px-3 py-1.5 rounded-lg
+                       bg-amber-100 dark:bg-amber-800/50
+                       hover:bg-amber-200 dark:hover:bg-amber-800
+                       transition-all duration-200
                        whitespace-nowrap flex-shrink-0"
           >
             Add Keys →
-          </Link>
-        </div>
-      ) : (
-        /* Live Mode: green banner confirming which APIs are active */
-        <div className="bg-green-50 dark:bg-green-900/20 border-b border-green-200 dark:border-green-800
-                        px-4 py-1 flex items-center gap-3">
-          <span className="flex items-center gap-1 text-xs font-semibold text-green-700 dark:text-green-400">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
-            </span>
-            Live Data
-          </span>
-          <span className="text-gray-300 dark:text-gray-600">|</span>
-          {/* Show each active API as a pill */}
-          {newsLive && (
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs
-                             bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300">
-              📰 NewsAPI
-            </span>
-          )}
-          {tmdbLive && (
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs
-                             bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300">
-              🎬 TMDB
-            </span>
-          )}
-          {!newsLive && (
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs
-                             bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400">
-              📰 NewsAPI (mock)
-            </span>
-          )}
-          {!tmdbLive && (
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs
-                             bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400">
-              🎬 TMDB (mock)
-            </span>
-          )}
-          <Link
-            href="/settings"
-            className="ml-auto text-xs text-green-600 dark:text-green-400 hover:underline"
-          >
-            Manage Keys
           </Link>
         </div>
       )}
@@ -199,10 +158,11 @@ export default function Header({ onMenuClick }: HeaderProps) {
               placeholder="Search news, movies, posts, categories..."
               value={localQuery}
               onChange={handleSearchChange}
-              className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 
-                         bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white
-                         focus:outline-none focus:ring-2 focus:ring-blue-500
-                         placeholder-gray-400"
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl glass
+                         text-gray-900 dark:text-white font-medium
+                         focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
+                         placeholder-gray-400 dark:placeholder-gray-500
+                         transition-all duration-300"
             />
             {localQuery && (
               <button

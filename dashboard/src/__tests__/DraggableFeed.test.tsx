@@ -4,8 +4,8 @@
 import React from "react";
 import { screen, fireEvent } from "@testing-library/react";
 import { renderWithStore } from "./testUtils";
-import DraggableFeed from "@/components/feed/DraggableFeed";
-import { ContentItem } from "@/types";
+import DraggableFeed from "@/features/feed/components/DraggableFeed";
+import { ContentItem } from "@/shared/types";
 
 // ----- Mocks -----
 // @dnd-kit requires pointer events, ResizeObserver, etc. that jsdom doesn't

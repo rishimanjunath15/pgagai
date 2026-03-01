@@ -2,10 +2,10 @@
 // ROOT LAYOUT - Wraps the entire app
 // ============================================
 import type { Metadata } from "next";
-import ReduxProvider from "@/components/providers/ReduxProvider";
-import AuthProvider from "@/components/providers/AuthProvider";
-import I18nProvider from "@/components/providers/I18nProvider";
-import { auth } from "@/auth";
+import ReduxProvider from "@/shared/components/providers/ReduxProvider";
+import AuthProvider from "@/shared/components/providers/AuthProvider";
+import I18nProvider from "@/shared/components/providers/I18nProvider";
+import { auth } from "@/features/auth/auth";
 import "./globals.css";
 
 export const metadata: Metadata = {

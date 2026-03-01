@@ -4,8 +4,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ContentItem } from "@/types";
-import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
+import { useTranslation } from "react-i18next";
+import { ContentItem } from "@/shared/types";
+import { useAppDispatch, useAppSelector } from "@/shared/hooks/useRedux";
 import { addFavorite, removeFavorite } from "@/store/contentSlice";
 
 interface ContentCardProps {
@@ -16,6 +17,7 @@ interface ContentCardProps {
 }
 
 export default function ContentCard({ item, index, isDragging = false }: ContentCardProps) {
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const favorites = useAppSelector((state) => state.content.favorites);
   const isFavorite = favorites.some((f) => f.id === item.id);
@@ -42,11 +44,11 @@ export default function ContentCard({ item, index, isDragging = false }: Content
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.3, delay: index * 0.05 }}
-      whileHover={isDragging ? undefined : { y: -4, boxShadow: "0 12px 32px rgba(0,0,0,0.12)" }}
-      className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md 
+      transition={{ duration: 0.2, delay: index * 0.05 }}
+      className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md 
                  border border-gray-200 dark:border-gray-700 flex flex-col
-                 transition-shadow"
+                 hover:shadow-xl hover:scale-105 hover:border-blue-400 dark:hover:border-blue-500
+                 transition-all duration-200 cursor-pointer"
     >
       {/* Image */}
       <div className="relative h-48 overflow-hidden">
@@ -59,7 +61,9 @@ export default function ContentCard({ item, index, isDragging = false }: Content
           }}
         />
         {/* Type Badge */}
-        <span className={`absolute top-3 left-3 px-2 py-1 rounded-full text-xs font-semibold ${badge.color}`}>
+        <span 
+          className={`absolute top-3 left-3 px-3 py-1.5 rounded-full text-xs font-bold ${badge.color}`}
+        >
           {badge.label}
         </span>
         {/* Favorite Button */}
@@ -67,35 +71,42 @@ export default function ContentCard({ item, index, isDragging = false }: Content
           onClick={() =>
             isFavorite ? dispatch(removeFavorite(item.id)) : dispatch(addFavorite(item))
           }
-          className="absolute top-3 right-3 p-1.5 rounded-full bg-white/80 dark:bg-gray-800/80 
-                     hover:bg-white dark:hover:bg-gray-700 transition-colors"
+          className="absolute top-3 right-3 p-2 rounded-full 
+                     bg-white/90 dark:bg-gray-800/90
+                     hover:bg-white dark:hover:bg-gray-700 
+                     shadow-md hover:shadow-lg transition-shadow"
           aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
         >
-          {isFavorite ? "❤️" : "🤍"}
+          <span className="text-lg">
+            {isFavorite ? "❤️" : "🤍"}
+          </span>
         </button>
       </div>
 
       {/* Content */}
-      <div className="p-4 flex-1 flex flex-col">
+      <div className="p-5 flex-1 flex flex-col">
         {/* Category + Date */}
-        <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mb-2">
-          <span className="capitalize">{item.category}</span>
-          <span>{formattedDate}</span>
+        <div className="flex items-center justify-between text-xs font-medium mb-3">
+          <span className="capitalize px-2 py-1 rounded-md bg-gray-100 
+                         dark:bg-gray-700 text-gray-700 dark:text-gray-300">
+            {item.category}
+          </span>
+          <span className="text-gray-500 dark:text-gray-400">{formattedDate}</span>
         </div>
 
         {/* Title */}
-        <h3 className="font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">
+        <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-3 line-clamp-2">
           {item.title}
         </h3>
 
         {/* Description */}
-        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-3 flex-1">
+        <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400 mb-4 line-clamp-3 flex-1">
           {item.description}
         </p>
 
         {/* Footer: Source + CTA */}
         <div className="flex items-center justify-between">
-          {/* Source label — green dot = real API, gray dot = mock/demo */}
+          {/* Source label */}
           <span className="flex items-center gap-1.5 text-xs text-gray-400">
             <span
               title={
@@ -116,13 +127,17 @@ export default function ContentCard({ item, index, isDragging = false }: Content
             href={item.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline"
+            className="inline-flex items-center gap-1 px-4 py-2 rounded-lg
+                       text-sm font-bold text-white
+                       bg-blue-600 hover:bg-blue-700
+                       shadow-md hover:shadow-lg
+                       transition-colors duration-200"
           >
             {item.type === "recommendation"
-              ? "Watch Now →"
+              ? t("feed.watchNow")
               : item.type === "social"
-              ? "View Post →"
-              : "Read More →"}
+              ? t("feed.viewPost")
+              : t("feed.readMore")}
           </a>
         </div>
       </div>

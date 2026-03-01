@@ -8,7 +8,7 @@ import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { AVATAR_OPTIONS, AVATAR_LS_KEY, getAvatarGradient } from "@/lib/avatarOptions";
+import { AVATAR_OPTIONS, AVATAR_LS_KEY, getAvatarGradient } from "@/shared/utils/avatarOptions";
 
 export default function ProfilePage() {
   const { t } = useTranslation();

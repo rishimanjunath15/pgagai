@@ -3,7 +3,7 @@
 // ============================================
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { auth } from "@/auth";
+import { auth } from "@/features/auth/auth";
 
 // Routes that require authentication
 const protectedPaths = ["/", "/settings", "/profile"];

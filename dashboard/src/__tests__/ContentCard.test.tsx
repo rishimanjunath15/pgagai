@@ -4,8 +4,8 @@
 import React from "react";
 import { screen, fireEvent } from "@testing-library/react";
 import { renderWithStore } from "./testUtils";
-import ContentCard from "@/components/cards/ContentCard";
-import { ContentItem } from "@/types";
+import ContentCard from "@/features/feed/components/ContentCard";
+import { ContentItem } from "@/shared/types";
 
 // Mock framer-motion to avoid animation issues in tests
 // We strip out motion-specific props so they don't get passed to the real DOM

@@ -1,10 +1,14 @@
 {
   "nav": {
     "feed": "Inicio",
+    "trending": "Tendencias",
+    "favorites": "Favoritos",
     "settings": "Configuración",
     "profile": "Perfil",
     "login": "Iniciar sesión",
-    "logout": "Cerrar sesión"
+    "logout": "Cerrar sesión",
+    "personalizedFeed": "Tu feed personalizado",
+    "dashboard": "Panel"
   },
   "header": {
     "search": "Buscar noticias, películas, publicaciones...",
@@ -22,18 +26,52 @@
     "refresh": "Actualizar",
     "loadMore": "Cargar más",
     "newItemsBanner": "{{count}} nuevos elementos — haz clic para cargar",
+    "readMore": "Leer →",
+    "watchNow": "Ver →",
+    "viewPost": "Ver →",
     "categories": {
-      "all": "Todo",
-      "news": "Noticias",
-      "movies": "Películas",
-      "social": "Social"
+      "technology": "Tecnología",
+      "sports": "Deportes",
+      "finance": "Finanzas",
+      "entertainment": "Entretenimiento",
+      "health": "Salud",
+      "science": "Ciencia"
     }
+  },
+  "favorites": {
+    "title": "Tus Favoritos",
+    "savedItems": "elemento guardado",
+    "savedItems_plural": "elementos guardados",
+    "news": "Noticia",
+    "movies": "Película",
+    "movies_plural": "Películas",
+    "posts": "Publicación",
+    "posts_plural": "Publicaciones",
+    "clearAll": "Limpiar todo",
+    "removeAll": "¿Eliminar {{count}} elementos?",
+    "yes": "Sí",
+    "cancel": "Cancelar",
+    "empty": "Sin favoritos aún. ¡Añade contenido para empezar!"
   },
   "settings": {
     "title": "Configuración",
+    "description": "Personaliza tu experiencia en el panel",
+    "contentPreferences": "Preferencias de contenido",
+    "contentPreferencesDesc": "Selecciona las categorías que deseas ver en tu feed. Al menos una debe estar seleccionada.",
+    "appearance": "Apariencia",
+    "appearanceDesc": "Alterna entre modo claro y oscuro.",
+    "darkMode": "Modo oscuro",
+    "darkModeDesc": "Más fácil para los ojos en ambientes con poca luz",
+    "saveReload": "Guardar y Recargar",
+    "saved": "¡Guardado! Recargando…",
+    "clearKeys": "Limpiar claves",
+    "about": "Acerca de",
+    "version": "Versión",
+    "stack": "Stack",
+    "apis": "APIs",
+    "mockFallback": "con alternativa de simulación",
     "apiKeys": "Claves API",
     "preferences": "Preferencias",
-    "darkMode": "Modo oscuro",
     "language": "Idioma"
   },
   "profile": {

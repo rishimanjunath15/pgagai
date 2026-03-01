@@ -4,8 +4,8 @@
 import React from "react";
 import { screen, fireEvent } from "@testing-library/react";
 import { render } from "@testing-library/react";
-import CategoryFilter from "@/components/ui/CategoryFilter";
-import { Category } from "@/types";
+import CategoryFilter from "@/shared/components/ui/CategoryFilter";
+import { Category } from "@/shared/types";
 
 describe("CategoryFilter", () => {
   const mockOnToggle = jest.fn();

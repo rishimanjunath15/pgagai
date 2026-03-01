@@ -1,10 +1,14 @@
 {
   "nav": {
     "feed": "Feed",
+    "trending": "Trending",
+    "favorites": "Favorites",
     "settings": "Settings",
     "profile": "Profile",
     "login": "Login",
-    "logout": "Logout"
+    "logout": "Logout",
+    "personalizedFeed": "Your personalized feed",
+    "dashboard": "Dashboard"
   },
   "header": {
     "search": "Search news, movies, posts, categories...",
@@ -22,18 +26,52 @@
     "refresh": "Refresh",
     "loadMore": "Load more",
     "newItemsBanner": "{{count}} new items — click to load",
+    "readMore": "Read →",
+    "watchNow": "Watch →",
+    "viewPost": "View →",
     "categories": {
-      "all": "All",
-      "news": "News",
-      "movies": "Movies",
-      "social": "Social"
+      "technology": "Technology",
+      "sports": "Sports",
+      "finance": "Finance",
+      "entertainment": "Entertainment",
+      "health": "Health",
+      "science": "Science"
     }
+  },
+  "favorites": {
+    "title": "Your Favorites",
+    "savedItems": "saved item",
+    "savedItems_plural": "saved items",
+    "news": "News",
+    "movies": "Movie",
+    "movies_plural": "Movies",
+    "posts": "Post",
+    "posts_plural": "Posts",
+    "clearAll": "Clear all",
+    "removeAll": "Remove all {{count}} items?",
+    "yes": "Yes",
+    "cancel": "Cancel",
+    "empty": "No favorites yet. Add content to get started!"
   },
   "settings": {
     "title": "Settings",
+    "description": "Customize your dashboard experience",
+    "contentPreferences": "Content Preferences",
+    "contentPreferencesDesc": "Select the categories you want to see in your feed. At least one must be selected.",
+    "appearance": "Appearance",
+    "appearanceDesc": "Toggle between light and dark mode.",
+    "darkMode": "Dark Mode",
+    "darkModeDesc": "Easier on the eyes in low-light environments",
+    "saveReload": "Save & Reload",
+    "saved": "Saved! Reloading…",
+    "clearKeys": "Clear keys",
+    "about": "About",
+    "version": "Version",
+    "stack": "Stack",
+    "apis": "APIs",
+    "mockFallback": "with mock fallback",
     "apiKeys": "API Keys",
     "preferences": "Preferences",
-    "darkMode": "Dark Mode",
     "language": "Language"
   },
   "profile": {

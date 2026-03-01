@@ -5,10 +5,10 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
-import en from "./locales/en.json";
-import es from "./locales/es.json";
-import fr from "./locales/fr.json";
-import de from "./locales/de.json";
+import en from "./en.json";
+import es from "./es.json";
+import fr from "./fr.json";
+import de from "./de.json";
 
 export const SUPPORTED_LANGUAGES = [
   { code: "en", label: "English", flag: "🇬🇧" },
@@ -32,6 +32,9 @@ if (!i18n.isInitialized) {
       supportedLngs: ["en", "es", "fr", "de"],
       interpolation: {
         escapeValue: false, // React already escapes values
+      },
+      react: {
+        useSuspense: false, // Critical for Next.js: allows re-renders on language change without suspense boundary issues
       },
       detection: {
         // Where i18next should detect the language from (in order of priority)

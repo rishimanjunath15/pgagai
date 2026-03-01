@@ -2,8 +2,8 @@
 // SEARCH SLICE - Manages search query & results
 // ============================================
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
-import { SearchState, ContentItem } from "@/types";
-import { searchContent } from "@/services/api";
+import { SearchState, ContentItem } from "@/shared/types";
+import { searchContent } from "@/shared/utils/api";
 
 const initialState: SearchState = {
   query: "",

@@ -1,10 +1,14 @@
 {
   "nav": {
     "feed": "Feed",
+    "trending": "Trends",
+    "favorites": "Favoriten",
     "settings": "Einstellungen",
     "profile": "Profil",
     "login": "Anmelden",
-    "logout": "Abmelden"
+    "logout": "Abmelden",
+    "personalizedFeed": "Dein personalisierter Feed",
+    "dashboard": "Dashboard"
   },
   "header": {
     "search": "Nachrichten, Filme, Beiträge suchen...",
@@ -22,18 +26,52 @@
     "refresh": "Aktualisieren",
     "loadMore": "Mehr laden",
     "newItemsBanner": "{{count}} neue Einträge — zum Laden klicken",
+    "readMore": "Lesen →",
+    "watchNow": "Ansehen →",
+    "viewPost": "Ansehen →",
     "categories": {
-      "all": "Alle",
-      "news": "Nachrichten",
-      "movies": "Filme",
-      "social": "Sozial"
+      "technology": "Technologie",
+      "sports": "Sport",
+      "finance": "Finanzen",
+      "entertainment": "Unterhaltung",
+      "health": "Gesundheit",
+      "science": "Wissenschaft"
     }
+  },
+  "favorites": {
+    "title": "Deine Favoriten",
+    "savedItems": "gespeicherter Eintrag",
+    "savedItems_plural": "gespeicherte Einträge",
+    "news": "Nachricht",
+    "movies": "Film",
+    "movies_plural": "Filme",
+    "posts": "Beitrag",
+    "posts_plural": "Beiträge",
+    "clearAll": "Alles löschen",
+    "removeAll": "{{count}} Einträge löschen?",
+    "yes": "Ja",
+    "cancel": "Abbrechen",
+    "empty": "Noch keine Favoriten. Füge Inhalte hinzu!"
   },
   "settings": {
     "title": "Einstellungen",
+    "description": "Personalisiere dein Dashboard",
+    "contentPreferences": "Inhaltspäferenzen",
+    "contentPreferencesDesc": "Wähle die Kategorien aus, die du in deinem Feed sehen möchtest. Mindestens eine muss ausgewählt werden.",
+    "appearance": "Erscheinungsbild",
+    "appearanceDesc": "Wechsle zwischen hellem und dunklem Modus.",
+    "darkMode": "Dunkelmodus",
+    "darkModeDesc": "Leichter für die Augen bei schwacher Beleuchtung",
+    "saveReload": "Speichern & Neuladen",
+    "saved": "Gespeichert! Wird neu geladen…",
+    "clearKeys": "Schlüssel löschen",
+    "about": "Über",
+    "version": "Version",
+    "stack": "Stack",
+    "apis": "APIs",
+    "mockFallback": "mit Mock-Fallback",
     "apiKeys": "API-Schlüssel",
     "preferences": "Präferenzen",
-    "darkMode": "Dunkelmodus",
     "language": "Sprache"
   },
   "profile": {

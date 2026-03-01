@@ -4,7 +4,7 @@
 import React from "react";
 import { screen, fireEvent, act } from "@testing-library/react";
 import { renderWithStore } from "./testUtils";
-import Header from "@/components/layout/Header";
+import Header from "@/shared/components/layout/Header";
 
 // ----- Mocks -----
 // next/navigation is used inside Header → mock usePathname

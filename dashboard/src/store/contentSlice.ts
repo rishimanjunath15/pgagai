@@ -2,8 +2,8 @@
 // CONTENT SLICE - Manages feed, trending, favorites
 // ============================================
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
-import { ContentState, ContentItem, Category } from "@/types";
-import { fetchNews, fetchRecommendations, fetchSocialPosts } from "@/services/api";
+import { ContentState, ContentItem, Category } from "@/shared/types";
+import { fetchNews, fetchRecommendations, fetchSocialPosts } from "@/shared/utils/api";
 
 // Initial state
 const initialState: ContentState = {

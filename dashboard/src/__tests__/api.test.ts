@@ -7,8 +7,8 @@
 // path.  The happy-path "with real keys" axios calls are exercised by the E2E
 // test suite where the dev-server runs with a real .env.local.
 // ============================================
-import { fetchNews, fetchRecommendations, fetchSocialPosts, searchContent } from "@/services/api";
-import { ContentItem, Category } from "@/types";
+import { fetchNews, fetchRecommendations, fetchSocialPosts, searchContent } from "@/shared/utils/api";
+import { ContentItem, Category } from "@/shared/types";
 
 // =============================================
 // Helpers

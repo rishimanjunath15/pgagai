@@ -6,7 +6,7 @@ import { persistStore, persistReducer, createTransform, FLUSH, REHYDRATE, PAUSE,
 import contentReducer from "./contentSlice";
 import preferencesReducer from "./preferencesSlice";
 import searchReducer from "./searchSlice";
-import type { ContentState, PreferencesState, SearchState } from "@/types";
+import type { ContentState, PreferencesState, SearchState } from "@/shared/types";
 
 // ---- SSR-safe storage ----
 // redux-persist needs localStorage, which is only available in the browser.

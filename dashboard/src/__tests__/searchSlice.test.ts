@@ -6,7 +6,7 @@ import searchReducer, {
   clearSearch,
   performSearch,
 } from "@/store/searchSlice";
-import { SearchState } from "@/types";
+import { SearchState } from "@/shared/types";
 import { configureStore } from "@reduxjs/toolkit";
 
 // Mock the api service so performSearch thunk doesn't make real HTTP calls

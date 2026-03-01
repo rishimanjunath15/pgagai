@@ -6,7 +6,7 @@ import preferencesReducer, {
   toggleDarkMode,
   setPreferences,
 } from "@/store/preferencesSlice";
-import { PreferencesState } from "@/types";
+import { PreferencesState } from "@/shared/types";
 
 // Starting state for each test
 const initialState: PreferencesState = {

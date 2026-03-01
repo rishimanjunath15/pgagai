@@ -5,12 +5,12 @@
 
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
+import { useAppDispatch, useAppSelector } from "@/shared/hooks/useRedux";
 import { fetchTrending } from "@/store/contentSlice";
-import { ContentItem } from "@/types";
-import DashboardLayout from "@/components/layout/DashboardLayout";
-import ContentCard from "@/components/cards/ContentCard";
-import SkeletonCard from "@/components/ui/SkeletonCard";
+import { ContentItem } from "@/shared/types";
+import DashboardLayout from "@/shared/components/layout/DashboardLayout";
+import ContentCard from "@/features/feed/components/ContentCard";
+import SkeletonCard from "@/shared/components/ui/SkeletonCard";
 
 // A labelled section with a heading + grid of cards
 function TrendingSection({
@@ -79,28 +79,6 @@ export default function TrendingPage() {
   return (
     <DashboardLayout>
       <div className="space-y-8">
-        {/* Page header */}
-        <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}>
-          <div className="flex items-center justify-between">
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">🔥 Trending Now</h2>
-              <p className="text-gray-500 dark:text-gray-400 mt-1 text-sm">
-                Top stories, movies, and posts across all categories
-              </p>
-            </div>
-            {/* Refresh button */}
-            <button
-              onClick={() => dispatch(fetchTrending())}
-              disabled={loading}
-              className="flex items-center gap-2 px-4 py-2 bg-orange-500 hover:bg-orange-600 disabled:opacity-50
-                         text-white text-sm font-medium rounded-lg transition-colors"
-            >
-              <span className={loading ? "animate-spin" : ""}>🔄</span>
-              Refresh
-            </button>
-          </div>
-        </motion.div>
-
         {/* Error banner */}
         {error && !loading && (
           <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg text-red-700 dark:text-red-400 text-sm">

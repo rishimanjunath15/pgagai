@@ -7,17 +7,17 @@ import { useEffect, useCallback, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
+import { useAppDispatch, useAppSelector } from "@/shared/hooks/useRedux";
 import { fetchContent, clearFeed } from "@/store/contentSlice";
 import { toggleCategory } from "@/store/preferencesSlice";
-import { Category } from "@/types";
-import DashboardLayout from "@/components/layout/DashboardLayout";
-import DraggableFeed from "@/components/feed/DraggableFeed";
-import ContentCard from "@/components/cards/ContentCard";
-import CategoryFilter from "@/components/ui/CategoryFilter";
-import LoadingSpinner from "@/components/ui/LoadingSpinner";
-import SkeletonCard from "@/components/ui/SkeletonCard";
-import { useSSE } from "@/hooks/useSSE";
+import { Category } from "@/shared/types";
+import DashboardLayout from "@/shared/components/layout/DashboardLayout";
+import DraggableFeed from "@/features/feed/components/DraggableFeed";
+import ContentCard from "@/features/feed/components/ContentCard";
+import CategoryFilter from "@/shared/components/ui/CategoryFilter";
+import LoadingSpinner from "@/shared/components/ui/LoadingSpinner";
+import SkeletonCard from "@/shared/components/ui/SkeletonCard";
+import { useSSE } from "@/features/feed/hooks/useSSE";
 import { useTranslation } from "react-i18next";
 
 // How often to auto-refresh the feed (milliseconds)
@@ -134,88 +134,6 @@ export default function HomePage() {
   return (
     <DashboardLayout>
       <div className="space-y-6">
-        {/* Page title */}
-        <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}>
-          <div className="flex items-center justify-between">
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-                {isSearching ? `Search: "${query}"` : t("feed.title")}
-              </h2>
-              <div className="flex items-center gap-3 mt-1 flex-wrap">
-                <p className="text-gray-500 dark:text-gray-400 text-sm">
-                  {isSearching
-                    ? `${results.length} result${results.length !== 1 ? "s" : ""} found`
-                    : "Personalized content based on your preferences"}
-                </p>
-                {/* Countdown badge — only show when not searching */}
-                {!isSearching && (
-                  <span
-                    className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium
-                      ${
-                        countdown <= 10
-                          ? "bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400"
-                          : "bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400"
-                      }`}
-                  >
-                    {/* Spinning ring when about to refresh */}
-                    <span className={countdown <= 5 ? "animate-spin" : ""}>🔄</span>
-                    {loading ? "Refreshing…" : `Refreshes in ${countdown}s`}
-                  </span>
-                )}
-                {/* SSE connection indicator */}
-                {isConnected && (
-                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium
-                                   bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400">
-                    <span className="relative flex h-1.5 w-1.5">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                      <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500" />
-                    </span>
-                    {t("realtime.connected")}
-                  </span>
-                )}
-              </div>
-            </div>
-            {/* Manual refresh button */}
-            {!isSearching && (
-              <button
-                onClick={() => {
-                  setCountdown(AUTO_REFRESH_MS / 1000); // reset countdown
-                  dispatch(clearFeed());
-                  dispatch(fetchContent({ categories: favoriteCategories, page: 1 }));
-                }}
-                disabled={loading}
-                className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 disabled:opacity-50
-                           text-white text-sm font-medium rounded-lg transition-colors"
-              >
-                <span className={loading ? "animate-spin" : ""}>🔄</span>
-                {t("feed.refresh")}
-              </button>
-            )}
-          </div>
-        </motion.div>
-
-        {/* SSE new-items banner */}
-        <AnimatePresence>
-          {newItems.length > 0 && !isSearching && (
-            <motion.button
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              onClick={() => {
-                clearNewItems();
-                setCountdown(AUTO_REFRESH_MS / 1000);
-                dispatch(clearFeed());
-                dispatch(fetchContent({ categories: favoriteCategories, page: 1 }));
-              }}
-              className="w-full flex items-center justify-center gap-2 py-2.5 px-4
-                         bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium
-                         rounded-xl transition-colors shadow-md"
-            >
-              ✨ {t("feed.newItemsBanner", { count: newItems.length })}
-            </motion.button>
-          )}
-        </AnimatePresence>
-
         {/* Category filter pills */}
         {!isSearching && (
           <CategoryFilter selected={favoriteCategories} onToggle={handleCategoryToggle} />

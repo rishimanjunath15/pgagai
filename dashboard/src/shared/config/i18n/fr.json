@@ -1,10 +1,14 @@
 {
   "nav": {
     "feed": "Fil d'actualité",
+    "trending": "Tendances",
+    "favorites": "Favoris",
     "settings": "Paramètres",
     "profile": "Profil",
     "login": "Connexion",
-    "logout": "Déconnexion"
+    "logout": "Déconnexion",
+    "personalizedFeed": "Votre fil personnalisé",
+    "dashboard": "Tableau de bord"
   },
   "header": {
     "search": "Rechercher actualités, films, publications...",
@@ -22,18 +26,52 @@
     "refresh": "Actualiser",
     "loadMore": "Charger plus",
     "newItemsBanner": "{{count}} nouveaux éléments — cliquez pour charger",
+    "readMore": "Lire →",
+    "watchNow": "Regarder →",
+    "viewPost": "Voir →",
     "categories": {
-      "all": "Tout",
-      "news": "Actualités",
-      "movies": "Films",
-      "social": "Social"
+      "technology": "Technologie",
+      "sports": "Sports",
+      "finance": "Finance",
+      "entertainment": "Divertissement",
+      "health": "Santé",
+      "science": "Science"
     }
+  },
+  "favorites": {
+    "title": "Vos Favoris",
+    "savedItems": "élément enregistré",
+    "savedItems_plural": "éléments enregistrés",
+    "news": "Actualité",
+    "movies": "Film",
+    "movies_plural": "Films",
+    "posts": "Publication",
+    "posts_plural": "Publications",
+    "clearAll": "Vider tout",
+    "removeAll": "Supprimer {{count}} éléments ?",
+    "yes": "Oui",
+    "cancel": "Annuler",
+    "empty": "Aucun favori pour le moment. Commencez à ajouter du contenu !"
   },
   "settings": {
     "title": "Paramètres",
+    "description": "Personnalisez votre expérience du tableau de bord",
+    "contentPreferences": "Préférences de contenu",
+    "contentPreferencesDesc": "Sélectionnez les catégories que vous souhaitez voir dans votre fil. Au moins une doit être sélectionnée.",
+    "appearance": "Apparence",
+    "appearanceDesc": "Basculer entre le mode clair et le mode sombre.",
+    "darkMode": "Mode sombre",
+    "darkModeDesc": "Plus facile pour les yeux dans les environnements peu éclairés",
+    "saveReload": "Enregistrer et Recharger",
+    "saved": "Enregistré ! Rechargement…",
+    "clearKeys": "Effacer les clés",
+    "about": "À propos",
+    "version": "Version",
+    "stack": "Stack",
+    "apis": "APIs",
+    "mockFallback": "avec une alternative de simulation",
     "apiKeys": "Clés API",
     "preferences": "Préférences",
-    "darkMode": "Mode sombre",
     "language": "Langue"
   },
   "profile": {

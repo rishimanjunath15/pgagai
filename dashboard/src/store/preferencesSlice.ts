@@ -2,7 +2,7 @@
 // PREFERENCES SLICE - Manages user settings
 // ============================================
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { PreferencesState, Category } from "@/types";
+import { PreferencesState, Category } from "@/shared/types";
 
 // Default preferences for a new user
 const initialState: PreferencesState = {

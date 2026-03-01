@@ -2,7 +2,7 @@
 // API SERVICE - Fetches data from News, TMDB, and mock social APIs
 // ============================================
 import axios from "axios";
-import { ContentItem, Category } from "@/types";
+import { ContentItem, Category } from "@/shared/types";
 
 // ----- API Keys -----
 // Priority order:

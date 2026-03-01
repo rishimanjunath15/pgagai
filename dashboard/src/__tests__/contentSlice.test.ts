@@ -7,7 +7,7 @@ import contentReducer, {
   reorderFeed,
   clearFeed,
 } from "@/store/contentSlice";
-import { ContentState, ContentItem } from "@/types";
+import { ContentState, ContentItem } from "@/shared/types";
 
 // A mock content item to use in tests
 const mockItem: ContentItem = {

@@ -6,7 +6,7 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { useAppSelector } from "@/hooks/useRedux";
+import { useAppSelector } from "@/shared/hooks/useRedux";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 
@@ -34,30 +34,33 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   }, [darkMode]);
 
   return (
-    <div className="flex h-screen bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100">
-      {/* Sidebar */}
-      <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+    <div className="flex h-screen bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 relative overflow-hidden">
+      {/* Content */}
+      <div className="flex h-screen w-full">
+        {/* Sidebar */}
+        <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
-      {/* Main Area */}
-      <div className="flex-1 flex flex-col overflow-hidden min-w-0">
-        {/* Header */}
-        <Header onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
+        {/* Main Area */}
+        <div className="flex-1 flex flex-col overflow-hidden min-w-0">
+          {/* Header */}
+          <Header onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
 
-        {/* Page Content — animated on route change */}
-        <main className="flex-1 overflow-y-auto p-4 md:p-6">
-          <AnimatePresence mode="wait" initial={false}>
-            <motion.div
-              key={pathname}
-              variants={pageVariants}
-              initial="initial"
-              animate="enter"
-              exit="exit"
-              className="h-full"
-            >
-              {children}
-            </motion.div>
-          </AnimatePresence>
-        </main>
+          {/* Page Content — animated on route change */}
+          <main className="flex-1 overflow-y-auto p-4 md:p-6">
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                key={pathname}
+                variants={pageVariants}
+                initial="initial"
+                animate="enter"
+                exit="exit"
+                className="h-full"
+              >
+                {children}
+              </motion.div>
+            </AnimatePresence>
+          </main>
+        </div>
       </div>
     </div>
   );
